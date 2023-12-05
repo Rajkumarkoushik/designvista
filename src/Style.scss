@@ -1,0 +1,546 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 33px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h4 {
+    font-size: 27px;
+}
+
+h5 {
+    font-size: 24px;
+}
+
+h6 {
+    font-size: 21px;
+}
+
+p {
+    font-size: 16px;
+    text-align: justify;
+}
+
+.display-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gap15 {
+    gap: 15px;
+}
+
+.gap25 {
+    gap: 25px;
+}
+
+.logo {
+    width: 100%;
+    height: 55px;
+}
+
+// Storing values in root.
+$color-one: #7e7e7e;
+$color-two: #ce9e51;
+$color-three: #f3f3f3;
+$box-shadow: 0px 0px 5px 0px;
+
+.heading {
+    color: $color-two;
+    padding: 20px 0px;
+    background: linear-gradient(to right, #ce9e51 0%, hsl(0, 0%, 0%)0%, #ce9e51);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 2s infinite linear;
+}
+
+/* 
+    1. Navigation.
+    2. Banner section.
+    3. About us section.
+    4. Footer section.
+    5. Projects section.
+    6. Services section.
+    7. Contact section.
+*/
+
+//  1.  Navigation section starts.
+.header-main {
+    background-color: $color-two;
+
+    p a {
+        color: $color-three;
+        font-size: 15px;
+    }
+
+    &-icons {
+        display: flex;
+        gap: 10px;
+
+        i {
+            color: $color-three;
+            font-size: 16px;
+            padding: 10px;
+            box-shadow: $box-shadow;
+            border-radius: 50%;
+            transition: all 0.5s;
+
+            &:hover {
+                transform: rotate(360deg);
+            }
+        }
+    }
+
+    p {
+        margin-bottom: 0px !important;
+    }
+}
+
+.navigation-main {
+    ul li a {
+        font-size: 16px;
+        font-weight: 600;
+        color: $color-one;
+
+        &:hover {
+            color: $color-two;
+        }
+    }
+
+    .hamburger {
+        cursor: pointer;
+        display: none;
+
+        span {
+            width: 35px;
+            height: 5px;
+            display: block;
+            background-color: #ce9e51;
+            margin: 5px 0px;
+            border-radius: 10px;
+            transition: all 0.5s;
+        }
+    }
+    .ham-remove{
+        position: relative;
+        span{
+            width: 35px;
+            height: 5px;
+            display: block;
+            background-color: #ce9e51;
+            margin: 5px 0px;
+            border-radius: 10px; 
+            transition: all 0.5s;
+        }
+        & span:first-child{
+            transform: rotate(145deg);
+            position: absolute;
+        }
+        & span:nth-child(2){
+            transform: translateX(100px);
+        }
+        & span:nth-child(3){
+            transform: rotate(-145deg);
+            position: absolute;
+            top: 0;
+        }
+    }
+
+}
+
+//  1.  Navigation section ends.
+
+//  2.  Banner section starts.
+.banner-main {
+
+    .carousel .thumbs,
+    .carousel .carousel-status {
+        display: none;
+    }
+
+    img {
+        width: 100%;
+        height: 100vh;
+    }
+
+    &-image {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            background-color: rgb(0 0 0 / 60%);
+            ;
+            z-index: +1;
+        }
+    }
+
+    .carousel .control-dots {
+        bottom: 70px;
+    }
+
+    .carousel.carousel-slider .control-arrow {
+        top: 50%;
+        color: #fff;
+        font-size: 26px;
+        bottom: 50%;
+        margin-top: 0;
+        padding: 5px;
+    }
+
+    &-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: +9;
+
+        h1 {
+            font-size: 40px;
+            background: linear-gradient(to right, $color-two 70%, hsl(0, 0%, 100%) 10%, $color-two);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 2s infinite linear;
+        }
+
+
+    }
+
+    @keyframes shine {
+        0% {
+            background-position: 0;
+        }
+
+        60% {
+            background-position: 600px;
+        }
+
+        100% {
+            background-position: 600px;
+        }
+    }
+
+    .carousel .thumbs-wrapper {
+        margin: 0px;
+    }
+}
+
+.button-bt {
+    padding: 6px 30px;
+    background-color: $color-three;
+    font-size: 18px;
+    font-weight: 600;
+    border: 2px solid $color-three;
+    margin-top: 30px;
+    transition: all 0.5s;
+
+    a {
+        color: $color-two;
+    }
+
+    &:hover {
+        background-color: transparent;
+        transition: all 0.5s;
+    }
+}
+
+//  2.  Banner section ends.
+
+//  3.  About us section starts.
+.about-main {
+    background-color: #f6f8fb;
+
+    span {
+        color: $color-two;
+        font-size: 38px;
+    }
+
+    h2 {
+        padding-bottom: 20px;
+    }
+}
+
+//  3.  About us section ends.
+
+//  4.  Footer section starts.
+.footer-main {
+    background-image: url("../public/assets/footer-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    img {
+        width: 100px;
+        margin-bottom: 30px;
+        filter: brightness(0) invert(1);
+    }
+
+    ul li a {
+        color: $color-two;
+        transition: all 0.4s;
+
+        &:hover {
+            color: $color-three;
+            padding-left: 10px;
+        }
+
+        &::before {
+            content: "//";
+            padding-right: 10px;
+            color: $color-three;
+        }
+    }
+
+    li {
+        padding: 5px 0;
+    }
+
+    p a {
+        color: $color-two;
+
+        &:hover {
+            color: $color-three;
+        }
+    }
+}
+
+.copy-main {
+    span {
+        color: $color-two;
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+
+//  4.  Footer section ends.
+
+//  5.  Projects section starts.
+.project-main {
+    img {
+        width: 100%;
+        height: 150px;
+        box-shadow: 0px 0px 5px 0px;
+    }
+}
+
+//  5.  Projects section ends.
+
+//  6.  Services section starts.
+.services-main {
+    img {
+        width: 100%;
+        height: 400px;
+    }
+
+    &-sub {
+        margin: 0px 10px;
+        position: relative;
+    }
+
+    &-content {
+        position: absolute;
+        top: 0;
+        left: 20px;
+        top: 20px;
+        bottom: 20px;
+        right: 20px;
+        background-color: #f8f8f9ad;
+        padding: 20px;
+        text-align: center;
+
+        h6 {
+            padding-top: 20px;
+        }
+
+        img {
+            width: 50%;
+            height: 75px;
+        }
+    }
+}
+
+//  6.  Services section ends.
+
+//  6.  Contact section starts.
+.contact-main {
+    &-head {
+        background-image: url("../public/assets/contact-bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    &-form {
+
+        input,
+        textarea {
+            width: 100%;
+            height: 40px;
+            outline: none;
+            border: 2px solid $color-two;
+            border-radius: 5px;
+            padding-left: 10px;
+            font-size: 14px;
+            color: $color-two;
+            margin-bottom: 5px;
+
+            &:focus {
+                box-shadow: 0px 0px 5px 0px;
+                border: 2px solid $color-one;
+            }
+        }
+
+        textarea {
+            height: 100px;
+            padding-top: 10px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            color: $color-one;
+            padding-bottom: 5px;
+        }
+
+        button {
+            color: $color-two;
+        }
+    }
+
+    &-map {
+        background: #ffffff75;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0px 0px 5px 0px;
+        border-radius: 5px;
+
+        iframe {
+            margin: 0 auto;
+            display: block;
+            width: 75%;
+            height: 70%;
+        }
+
+        p,
+        h4 {
+            color: $color-two;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+}
+
+//  6.  Contact section ends.
+
+
+
+
+
+
+
+// Responsive css
+
+// Tablet responsive
+@media (max-width : 1023px) {
+
+    .header-main,
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: block !important;
+    }
+
+    .hamburger-list {
+        position: absolute;
+        z-index: +99;
+        left: 0px;
+        top: 75px;
+        background: #fff;
+        width: 100%;
+        padding-left: 20px;
+        li{
+            padding: 5px 0px;
+        }
+    }
+    .footer-address{
+        padding-top: 20px;
+    }
+}
+
+
+
+// Mobile
+@media (max-width: 767px){
+    body{
+        overflow-x: hidden;
+    }
+    .contact-main-map iframe {
+        height: auto;
+    }
+    .about-main span {
+        font-size: 36px;
+    }
+    ol, ul {
+        padding-left: 0rem;
+    }
+    .navigation-main{
+        img{
+            width: auto;
+            height: 60px;
+        }
+    }
+    .banner-main{
+        img{
+            height: 70vh;
+        }
+    }
+    .project-main{
+        img{
+            height: 100px;
+        }
+    }
+}
